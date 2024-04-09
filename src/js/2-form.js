@@ -23,7 +23,7 @@ function onSubmit(event) {
   const message = form.elements.message.value.trim();
 
   if (email === '' || message === '') {
-    return alert`Fill in the fields`;
+    return alert('Fill in the fields');
   }
 
   const saveData = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -42,7 +42,7 @@ Loaded();
 function Loaded() {
   const saveData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (saveData) {
-    input.value = saveData.email;
-    textarea.value = saveData.message;
+    input.value = saveData.email.trim();
+    textarea.value = saveData.message.trim();
   }
 }
